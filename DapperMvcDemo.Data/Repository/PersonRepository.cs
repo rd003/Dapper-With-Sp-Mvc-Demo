@@ -28,6 +28,7 @@ public class PersonRepository : IPersonRepository
     {
         try
         {
+
             await _db.SaveData("sp_update_person", person);
             return true;
         }
@@ -62,4 +63,8 @@ public class PersonRepository : IPersonRepository
         string query = "sp_get_people";
         return await _db.GetData<Person, dynamic>(query, new { });
     }
+
+    
+
+
 }
